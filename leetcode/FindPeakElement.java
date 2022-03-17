@@ -1,8 +1,8 @@
 package leetcode;
 
-public class FindPeakElement {
-    public int findPeakElement(int[] nums) {
-
-    }
-}
-}
+//public class FindPeakElement {
+//    public int findPeakElement(int[] nums) {
+//
+//    }
+//}
+//}
