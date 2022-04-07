@@ -20,7 +20,7 @@ public class VerticalOrder {
     public void fillVerticalTraversal(TreeNode root, int hd, TreeMap<Integer, List<Integer>> map) {
         if (root == null) return;
         map.computeIfAbsent(hd, integer -> new ArrayList<>());
-        map.get(hd).add(root.data);
+        map.get(hd).add(root.val);
         fillVerticalTraversal(root.left, hd - 1, map);
         fillVerticalTraversal(root.right, hd + 1, map);
     }

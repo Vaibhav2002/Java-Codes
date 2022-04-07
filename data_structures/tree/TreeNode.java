@@ -1,10 +1,11 @@
 package data_structures.tree;
 
 public class TreeNode {
-    int data;
-    TreeNode left, right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
     TreeNode(int x){
-        data = x;
+        val = x;
     }
 
 }
