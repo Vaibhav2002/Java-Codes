@@ -14,6 +14,7 @@ public class MinimumNumberOfVerticesToReachAllNodes {
                 dfs(i, adj, visited);
             }
         }
+        return ans;
     }
 
     private void dfs(int i, List<List<Integer>> adj, boolean[] visited) {
