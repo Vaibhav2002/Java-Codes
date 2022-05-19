@@ -31,7 +31,7 @@ public class DijkstraShortestPath {
             var node = pq.poll();
             if (dist[node.dest] == Integer.MAX_VALUE) continue;
             for (Edge edge : adj.get(node.dest)) {
-                int len = node.weight + edge.weight;
+                int len = dist[node.dest] + edge.weight;
                 if (len < dist[edge.dest]) {
                     dist[edge.dest] = len;
                     pq.add(edge);

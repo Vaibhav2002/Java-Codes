@@ -7,7 +7,7 @@ public class DisjointSet {
     private final int[] parent, rank;
     private final int size;
 
-    DisjointSet(int n) {
+    public DisjointSet(int n) {
         size = n;
         parent = new int[n];
         rank = new int[n];
@@ -30,8 +30,8 @@ public class DisjointSet {
     }
 
     private int findParent(int node) {
-        if (parent[node] != node) parent[node] = findParent(parent[node]);
-        return parent[node];
+        if (parent[node] == node) return node;
+        return parent[node] = findParent(parent[node]);
     }
 
     public void printGraph() {
@@ -48,6 +48,8 @@ public class DisjointSet {
         ob.union(3, 1);
         ob.printGraph();
         ob.union(4, 1);
+        ob.printGraph();
+        System.out.println(ob.findParent(1));
         ob.printGraph();
         System.out.println(ob.inSameComponent(4, 0));
         System.out.println(ob.inSameComponent(1, 0));

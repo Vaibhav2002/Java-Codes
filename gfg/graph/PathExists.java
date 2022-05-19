@@ -1,4 +1,4 @@
-package data_structures.graph;
+package gfg.graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
