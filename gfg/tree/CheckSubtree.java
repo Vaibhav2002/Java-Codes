@@ -41,6 +41,6 @@ public class CheckSubtree {
 
     private static boolean areTreesSame(Node root1, Node root2) {
         if (root1.data != root2.data) return false;
-        return areTreesSame(root1.left, root2.left) && areTreesSame(root1.right, root2.right)
+        return areTreesSame(root1.left, root2.left) && areTreesSame(root1.right, root2.right);
     }
 }
