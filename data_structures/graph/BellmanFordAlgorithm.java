@@ -22,14 +22,14 @@ public class BellmanFordAlgorithm {
     public boolean doesNegativeCycleExist(ArrayList<Node> edges, int n){
         var dist = getDistToAllNodes(0, edges, n);
         for(Node node:edges){
-            if(dist[node.source]+ node.weight < dist[node.dest]) return true;
+            if(dist[node.source] + node.weight < dist[node.dest]) return true;
         }
         return false;
     }
 
     private int[] getDistToAllNodes(int source, ArrayList<Node> edges, int n){
         var dist = new int[n];
-        Arrays.fill(dist, Integer.MAX_VALUE);
+        Arrays.fill(dist, 1000000);
         dist[source] = 0;
         for(int i=0;i<n-1;i++){
             for(Node edge:edges){

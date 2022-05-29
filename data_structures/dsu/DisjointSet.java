@@ -29,7 +29,7 @@ public class DisjointSet {
         return findParent(node1) == findParent(node2);
     }
 
-    private int findParent(int node) {
+    public int findParent(int node) {
         if (parent[node] == node) return node;
         return parent[node] = findParent(parent[node]);
     }
