@@ -25,4 +25,8 @@ public class DisjointSet {
         else if(rank[u]<rank[v]) parent[u] = v;
         else parent[v] = u;
     }
+
+    public boolean inSameComponent(int u, int v){
+        return find(u) == find(v);
+    }
 }

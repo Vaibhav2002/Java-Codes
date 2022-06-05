@@ -6,7 +6,7 @@ public class CourseSchedule {
     static int[] findOrder(int n, int m, ArrayList<ArrayList<Integer>> prerequisites)
     {
         var topo = findTopoSort(n, getAdj(n, prerequisites));
-        // System.out.println(topo.toString());
+         System.out.println(topo.toString());
         if(topo.size() !=n) return new int[n];
         int[] tp = new int[n];
         for(int i=0;i<n;i++) tp[i] = topo.get(i);
