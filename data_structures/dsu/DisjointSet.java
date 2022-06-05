@@ -33,26 +33,4 @@ public class DisjointSet {
         if (parent[node] == node) return node;
         return parent[node] = findParent(parent[node]);
     }
-
-    public void printGraph() {
-        System.out.println(Arrays.toString(parent));
-    }
-
-    public static void main(String[] args) {
-        int n = 5;
-        DisjointSet ob = new DisjointSet(n);
-        ob.union(0, 2);
-        ob.printGraph();
-        ob.union(4, 2);
-        ob.printGraph();
-        ob.union(3, 1);
-        ob.printGraph();
-        ob.union(4, 1);
-        ob.printGraph();
-        System.out.println(ob.findParent(1));
-        ob.printGraph();
-        System.out.println(ob.inSameComponent(4, 0));
-        System.out.println(ob.inSameComponent(1, 0));
-    }
-
 }
