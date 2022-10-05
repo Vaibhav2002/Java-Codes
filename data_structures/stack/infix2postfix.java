@@ -14,10 +14,7 @@ public class infix2postfix {
 				return true;
 			else if (s1.indexOf(c) != -1 && b)
 				return true;
-			else if (s2.indexOf(c) != -1 && s2.indexOf(ch) != -1)
-				return true;
-			else
-				return false;
+			else return s2.indexOf(c) != -1 && s2.indexOf(ch) != -1;
 		}
 	}
 
@@ -26,7 +23,8 @@ public class infix2postfix {
 		Scanner sc = new Scanner(System.in);
 		Stack<Character> ob = new Stack<Character>();
 		System.out.println("Enter the infix expression");
-		String s = sc.next().toUpperCase(), s1 = "";
+		String s = sc.next().toUpperCase();
+		StringBuilder s1 = new StringBuilder();
 		for (int i = 0; i < s.length(); i++) {
 			char ch = s.charAt(i);
 			if (!Character.isLetter(ch)) {
@@ -34,19 +32,19 @@ public class infix2postfix {
 					ob.push(ch);
 				else if (ch == ')') {
 					while (ob.peek() != '(')
-						s1 += ob.pop();
+						s1.append(ob.pop());
 					ob.pop();
 				} else if (ob2.check(ob.peek(), ch)) {
 					while (ch != '(' &&!ob.isEmpty()&& ob2.check(ob.peek(), ch))
-						s1 += ob.pop();
+						s1.append(ob.pop());
 					ob.push(ch);
 				} else if (!ob.isEmpty())
 					ob.push(ch);
 			} else
-				s1 += ch;
+				s1.append(ch);
 		}
 		while (!ob.isEmpty())
-			s1 += ob.pop();
+			s1.append(ob.pop());
 		System.out.println("Postfix expression:");
 		System.out.println(s1);
 	}

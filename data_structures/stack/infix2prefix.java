@@ -25,10 +25,7 @@ public class infix2prefix {
 			return true;
 		else if (s1.indexOf(c) != -1 && (s1.indexOf(ch) != -1 || s2.indexOf(ch) != -1))
 			return true;
-		else if (s2.indexOf(c) != -1 && s2.indexOf(ch) != -1)
-			return true;
-		else
-			return false;
+		else return s2.indexOf(c) != -1 && s2.indexOf(ch) != -1;
 	}
 
 	public static void main(String args[]) {
